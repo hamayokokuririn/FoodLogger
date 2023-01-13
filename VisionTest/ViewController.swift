@@ -10,13 +10,18 @@ import Vision
 import AVFoundation
 
 class ViewController: UIViewController {
-    let image = UIImage(named: "IMG_3454")!
+    let image = UIImage(named: "IMG_3456")!
 
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var label: UILabel!
 
     @IBAction func didPushButton(_ sender: Any) {
         run()
+    }
+    
+    @IBAction func didPushNext(_ sender: Any) {
+        let vc = ImageAnalysisViewController()
+        navigationController?.pushViewController(vc, animated: false)
     }
     
     override func viewDidLoad() {
