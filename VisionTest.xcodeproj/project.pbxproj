@@ -25,6 +25,7 @@
 		B56ECF3A29726CA4004E57F9 /* ReadJSONTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56ECF3929726CA4004E57F9 /* ReadJSONTests.swift */; };
 		B56ECF3C2972A081004E57F9 /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56ECF3B2972A081004E57F9 /* Food.swift */; };
 		B56ECF3E2972ACF1004E57F9 /* ShouldCheckFoodTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56ECF3D2972ACF1004E57F9 /* ShouldCheckFoodTableViewController.swift */; };
+		B56ECF432972FF6D004E57F9 /* ContentsServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56ECF422972FF6D004E57F9 /* ContentsServiceTests.swift */; };
 		B5C91ACF296E92C600CB7B31 /* ImageAnalysisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C91ACD296E92C600CB7B31 /* ImageAnalysisViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +60,7 @@
 		B56ECF3929726CA4004E57F9 /* ReadJSONTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadJSONTests.swift; sourceTree = "<group>"; };
 		B56ECF3B2972A081004E57F9 /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
 		B56ECF3D2972ACF1004E57F9 /* ShouldCheckFoodTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShouldCheckFoodTableViewController.swift; sourceTree = "<group>"; };
+		B56ECF422972FF6D004E57F9 /* ContentsServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentsServiceTests.swift; sourceTree = "<group>"; };
 		B5C91ACD296E92C600CB7B31 /* ImageAnalysisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAnalysisViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -117,6 +119,7 @@
 				B56ECF1F2970F137004E57F9 /* VisionTestTests.swift */,
 				B56ECF282970F1DC004E57F9 /* LinguisticServiceTests.swift */,
 				B56ECF3929726CA4004E57F9 /* ReadJSONTests.swift */,
+				B56ECF422972FF6D004E57F9 /* ContentsServiceTests.swift */,
 			);
 			path = VisionTestTests;
 			sourceTree = "<group>";
@@ -301,6 +304,7 @@
 				B56ECF292970F1DC004E57F9 /* LinguisticServiceTests.swift in Sources */,
 				B56ECF3A29726CA4004E57F9 /* ReadJSONTests.swift in Sources */,
 				B56ECF202970F137004E57F9 /* VisionTestTests.swift in Sources */,
+				B56ECF432972FF6D004E57F9 /* ContentsServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,13 +11,13 @@ import UIKit
 final class ShouldCheckFoodTableViewController: UITableViewController {
     
     var foodList: [ShouldCheckFood] = []
-    let content = ContentsService()
+    let content = ContentsService(reader: ReadJSONForSaitamaSyokuhin())
     
     override func viewDidLoad() {
         super.viewDidLoad()
         Task {
             do {
-                foodList = try await content.fetchShouldCheckFoodList()
+                foodList = try await content.fetchShouldCheckFoodList(fileName: .food_1)
                 tableView.reloadData()
             } catch {
                 fatalError()
@@ -40,9 +40,13 @@ final class ShouldCheckFoodTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ShouldCheckFoodCell")
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ShouldCheckFoodCell", for: indexPath)
         let food = foodList[indexPath.row]
-        cell?.textLabel?.text = food.name
-        return cell!
+        
+        var conf = cell.defaultContentConfiguration()
+        conf.text = food.name
+        conf.secondaryText = food.otherNames.reduce("", {$0 + "/" + $1})
+        cell.contentConfiguration = conf
+        return cell
     }
 }

@@ -14,4 +14,5 @@ protocol Food {
 struct ShouldCheckFood: Food {
     let name: String
     var checked: Bool = false
+    var otherNames: [String] = []
 }

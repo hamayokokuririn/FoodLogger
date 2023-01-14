@@ -8,13 +8,29 @@
 import Foundation
 
 
-actor ContentsService {
+actor ContentsService<Reader: JSONReader> {
+    let reader: Reader
+    init(reader: Reader) {
+        self.reader = reader
+    }
     
-    func fetchShouldCheckFoodList() async throws -> [ShouldCheckFood] {
-        let reader = ReadJSONForSaitamaSyokuhin()
-        let readData = try reader.read(fileName: .food_1)
+    func fetchShouldCheckFoodList(fileName: Reader.FileName) async throws -> [ShouldCheckFood] {
+        let readData = try reader.read(fileName: fileName)
         let foodList = readData.map {
             ShouldCheckFood(name: $0)
+        }
+        
+        // TODO: データ側で処理したい
+        let addedList = addOtherNames(preData: foodList)
+        
+        return addedList
+    }
+    
+    private func addOtherNames(preData: [ShouldCheckFood]) -> [ShouldCheckFood] {
+        var foodList = preData
+        foodList[0].otherNames = ["コメ"]
+        if let index = foodList.firstIndex(where: {$0.name == "人参"}) {
+            foodList[index].otherNames = ["にんじん", "ニンジン"]
         }
         return foodList
     }
