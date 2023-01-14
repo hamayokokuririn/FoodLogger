@@ -7,7 +7,7 @@
 
 import Foundation
 import XCTest
-@testable import VisionTest
+@testable import FoodLogger
 import NaturalLanguage
 
 class LinguisticServiceTests: XCTestCase {

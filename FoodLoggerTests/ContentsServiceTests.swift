@@ -7,7 +7,7 @@
 
 import Foundation
 import XCTest
-@testable import VisionTest
+@testable import FoodLogger
 
 final class ContentsServiceTests: XCTestCase {
     let service = ContentsService(reader: TestReader())

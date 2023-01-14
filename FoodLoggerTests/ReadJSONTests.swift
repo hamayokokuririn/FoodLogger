@@ -6,7 +6,7 @@
 //
 
 import Foundation
-@testable import VisionTest
+@testable import FoodLogger
 import XCTest
 
 final class ReadJSONTests: XCTestCase {
