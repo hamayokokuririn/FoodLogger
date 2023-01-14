@@ -108,7 +108,7 @@ class ImageAnalysisViewController: UIViewController {
         let tags = service.makeTagByNL(text: input)
         let words = service.ommitPunctuation(array: tags)
         
-        guard let vc = storyboard?.instantiateViewController(withIdentifier: "tableViewController") as? TableViewController else {return}
+        guard let vc = storyboard?.instantiateViewController(withIdentifier: "tableViewController") as? InputFoodTableViewController else {return}
         vc.wordList = words
         navigationController?.pushViewController(vc, animated: true)
     }

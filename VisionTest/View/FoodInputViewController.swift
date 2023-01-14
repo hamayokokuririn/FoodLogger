@@ -9,7 +9,7 @@ import UIKit
 import Vision
 import AVFoundation
 
-class ViewController: UIViewController {
+class FoodInputViewController: UIViewController {
     let image = UIImage(named: "IMG_3456")!
 
     @IBOutlet weak var imageView: UIImageView!

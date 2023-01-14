@@ -7,10 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B52046B4296F97B0007A1FAF /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52046B3296F97B0007A1FAF /* SecondViewController.swift */; };
 		B54B6F5A296D72DE00AC5A0B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54B6F59296D72DE00AC5A0B /* AppDelegate.swift */; };
 		B54B6F5C296D72DE00AC5A0B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54B6F5B296D72DE00AC5A0B /* SceneDelegate.swift */; };
-		B54B6F5E296D72DE00AC5A0B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54B6F5D296D72DE00AC5A0B /* ViewController.swift */; };
+		B54B6F5E296D72DE00AC5A0B /* FoodInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54B6F5D296D72DE00AC5A0B /* FoodInputViewController.swift */; };
 		B54B6F61296D72DE00AC5A0B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B54B6F5F296D72DE00AC5A0B /* Main.storyboard */; };
 		B54B6F63296D72E000AC5A0B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B54B6F62296D72E000AC5A0B /* Assets.xcassets */; };
 		B54B6F66296D72E000AC5A0B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B54B6F64296D72E000AC5A0B /* LaunchScreen.storyboard */; };
@@ -18,7 +17,14 @@
 		B56ECF202970F137004E57F9 /* VisionTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56ECF1F2970F137004E57F9 /* VisionTestTests.swift */; };
 		B56ECF272970F184004E57F9 /* LinguisticService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56ECF262970F184004E57F9 /* LinguisticService.swift */; };
 		B56ECF292970F1DC004E57F9 /* LinguisticServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56ECF282970F1DC004E57F9 /* LinguisticServiceTests.swift */; };
-		B56ECF2B297102BE004E57F9 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56ECF2A297102BE004E57F9 /* TableViewController.swift */; };
+		B56ECF2B297102BE004E57F9 /* InputFoodTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56ECF2A297102BE004E57F9 /* InputFoodTableViewController.swift */; };
+		B56ECF2E29712BDE004E57F9 /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = B56ECF2D29712BDE004E57F9 /* Algorithms */; };
+		B56ECF342972516E004E57F9 /* ContetsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56ECF332972516E004E57F9 /* ContetsService.swift */; };
+		B56ECF3629726BE1004E57F9 /* food_1.json in Resources */ = {isa = PBXBuildFile; fileRef = B56ECF3529726BE1004E57F9 /* food_1.json */; };
+		B56ECF3829726C30004E57F9 /* ReadJSONForSaitamaSyokuhin.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56ECF3729726C30004E57F9 /* ReadJSONForSaitamaSyokuhin.swift */; };
+		B56ECF3A29726CA4004E57F9 /* ReadJSONTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56ECF3929726CA4004E57F9 /* ReadJSONTests.swift */; };
+		B56ECF3C2972A081004E57F9 /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56ECF3B2972A081004E57F9 /* Food.swift */; };
+		B56ECF3E2972ACF1004E57F9 /* ShouldCheckFoodTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56ECF3D2972ACF1004E57F9 /* ShouldCheckFoodTableViewController.swift */; };
 		B5C91ACF296E92C600CB7B31 /* ImageAnalysisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C91ACD296E92C600CB7B31 /* ImageAnalysisViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -33,11 +39,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		B52046B3296F97B0007A1FAF /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		B54B6F56296D72DE00AC5A0B /* VisionTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VisionTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B54B6F59296D72DE00AC5A0B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B54B6F5B296D72DE00AC5A0B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B54B6F5D296D72DE00AC5A0B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B54B6F5D296D72DE00AC5A0B /* FoodInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodInputViewController.swift; sourceTree = "<group>"; };
 		B54B6F60296D72DE00AC5A0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B54B6F62296D72E000AC5A0B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B54B6F65296D72E000AC5A0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,7 +52,13 @@
 		B56ECF1F2970F137004E57F9 /* VisionTestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionTestTests.swift; sourceTree = "<group>"; };
 		B56ECF262970F184004E57F9 /* LinguisticService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinguisticService.swift; sourceTree = "<group>"; };
 		B56ECF282970F1DC004E57F9 /* LinguisticServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinguisticServiceTests.swift; sourceTree = "<group>"; };
-		B56ECF2A297102BE004E57F9 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		B56ECF2A297102BE004E57F9 /* InputFoodTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFoodTableViewController.swift; sourceTree = "<group>"; };
+		B56ECF332972516E004E57F9 /* ContetsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContetsService.swift; sourceTree = "<group>"; };
+		B56ECF3529726BE1004E57F9 /* food_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = food_1.json; path = ../../../pdfToText/jupyter/food_1.json; sourceTree = "<group>"; };
+		B56ECF3729726C30004E57F9 /* ReadJSONForSaitamaSyokuhin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadJSONForSaitamaSyokuhin.swift; sourceTree = "<group>"; };
+		B56ECF3929726CA4004E57F9 /* ReadJSONTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadJSONTests.swift; sourceTree = "<group>"; };
+		B56ECF3B2972A081004E57F9 /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
+		B56ECF3D2972ACF1004E57F9 /* ShouldCheckFoodTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShouldCheckFoodTableViewController.swift; sourceTree = "<group>"; };
 		B5C91ACD296E92C600CB7B31 /* ImageAnalysisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAnalysisViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -56,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B56ECF2E29712BDE004E57F9 /* Algorithms in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,18 +102,11 @@
 		B54B6F58296D72DE00AC5A0B /* VisionTest */ = {
 			isa = PBXGroup;
 			children = (
-				B56ECF172970E872004E57F9 /* KeyboardExtension.swift */,
-				B54B6F59296D72DE00AC5A0B /* AppDelegate.swift */,
-				B54B6F5B296D72DE00AC5A0B /* SceneDelegate.swift */,
-				B54B6F5D296D72DE00AC5A0B /* ViewController.swift */,
-				B54B6F5F296D72DE00AC5A0B /* Main.storyboard */,
-				B54B6F62296D72E000AC5A0B /* Assets.xcassets */,
-				B54B6F64296D72E000AC5A0B /* LaunchScreen.storyboard */,
-				B54B6F67296D72E000AC5A0B /* Info.plist */,
-				B5C91ACD296E92C600CB7B31 /* ImageAnalysisViewController.swift */,
-				B52046B3296F97B0007A1FAF /* SecondViewController.swift */,
-				B56ECF262970F184004E57F9 /* LinguisticService.swift */,
-				B56ECF2A297102BE004E57F9 /* TableViewController.swift */,
+				B56ECF3F2972ADBF004E57F9 /* settings */,
+				B56ECF322972513B004E57F9 /* ContentsServer */,
+				B56ECF2F2972453D004E57F9 /* CheckListData */,
+				B56ECF402972AE0F004E57F9 /* Service */,
+				B56ECF412972AE16004E57F9 /* View */,
 			);
 			path = VisionTest;
 			sourceTree = "<group>";
@@ -111,8 +116,60 @@
 			children = (
 				B56ECF1F2970F137004E57F9 /* VisionTestTests.swift */,
 				B56ECF282970F1DC004E57F9 /* LinguisticServiceTests.swift */,
+				B56ECF3929726CA4004E57F9 /* ReadJSONTests.swift */,
 			);
 			path = VisionTestTests;
+			sourceTree = "<group>";
+		};
+		B56ECF2F2972453D004E57F9 /* CheckListData */ = {
+			isa = PBXGroup;
+			children = (
+				B56ECF3529726BE1004E57F9 /* food_1.json */,
+			);
+			path = CheckListData;
+			sourceTree = "<group>";
+		};
+		B56ECF322972513B004E57F9 /* ContentsServer */ = {
+			isa = PBXGroup;
+			children = (
+				B56ECF332972516E004E57F9 /* ContetsService.swift */,
+				B56ECF3B2972A081004E57F9 /* Food.swift */,
+				B56ECF3729726C30004E57F9 /* ReadJSONForSaitamaSyokuhin.swift */,
+			);
+			path = ContentsServer;
+			sourceTree = "<group>";
+		};
+		B56ECF3F2972ADBF004E57F9 /* settings */ = {
+			isa = PBXGroup;
+			children = (
+				B54B6F64296D72E000AC5A0B /* LaunchScreen.storyboard */,
+				B54B6F59296D72DE00AC5A0B /* AppDelegate.swift */,
+				B54B6F5B296D72DE00AC5A0B /* SceneDelegate.swift */,
+				B54B6F62296D72E000AC5A0B /* Assets.xcassets */,
+				B54B6F67296D72E000AC5A0B /* Info.plist */,
+			);
+			path = settings;
+			sourceTree = "<group>";
+		};
+		B56ECF402972AE0F004E57F9 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				B56ECF172970E872004E57F9 /* KeyboardExtension.swift */,
+				B56ECF262970F184004E57F9 /* LinguisticService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		B56ECF412972AE16004E57F9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B54B6F5F296D72DE00AC5A0B /* Main.storyboard */,
+				B54B6F5D296D72DE00AC5A0B /* FoodInputViewController.swift */,
+				B56ECF2A297102BE004E57F9 /* InputFoodTableViewController.swift */,
+				B5C91ACD296E92C600CB7B31 /* ImageAnalysisViewController.swift */,
+				B56ECF3D2972ACF1004E57F9 /* ShouldCheckFoodTableViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -131,6 +188,9 @@
 			dependencies = (
 			);
 			name = VisionTest;
+			packageProductDependencies = (
+				B56ECF2D29712BDE004E57F9 /* Algorithms */,
+			);
 			productName = VisionTest;
 			productReference = B54B6F56296D72DE00AC5A0B /* VisionTest.app */;
 			productType = "com.apple.product-type.application";
@@ -181,6 +241,9 @@
 				Base,
 			);
 			mainGroup = B54B6F4D296D72DE00AC5A0B;
+			packageReferences = (
+				B56ECF2C29712BDE004E57F9 /* XCRemoteSwiftPackageReference "swift-algorithms" */,
+			);
 			productRefGroup = B54B6F57296D72DE00AC5A0B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -199,6 +262,7 @@
 				B54B6F66296D72E000AC5A0B /* LaunchScreen.storyboard in Resources */,
 				B54B6F63296D72E000AC5A0B /* Assets.xcassets in Resources */,
 				B54B6F61296D72DE00AC5A0B /* Main.storyboard in Resources */,
+				B56ECF3629726BE1004E57F9 /* food_1.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,12 +280,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B56ECF3C2972A081004E57F9 /* Food.swift in Sources */,
 				B56ECF272970F184004E57F9 /* LinguisticService.swift in Sources */,
-				B52046B4296F97B0007A1FAF /* SecondViewController.swift in Sources */,
 				B56ECF182970E872004E57F9 /* KeyboardExtension.swift in Sources */,
-				B56ECF2B297102BE004E57F9 /* TableViewController.swift in Sources */,
-				B54B6F5E296D72DE00AC5A0B /* ViewController.swift in Sources */,
+				B56ECF2B297102BE004E57F9 /* InputFoodTableViewController.swift in Sources */,
+				B56ECF342972516E004E57F9 /* ContetsService.swift in Sources */,
+				B54B6F5E296D72DE00AC5A0B /* FoodInputViewController.swift in Sources */,
+				B56ECF3E2972ACF1004E57F9 /* ShouldCheckFoodTableViewController.swift in Sources */,
 				B54B6F5A296D72DE00AC5A0B /* AppDelegate.swift in Sources */,
+				B56ECF3829726C30004E57F9 /* ReadJSONForSaitamaSyokuhin.swift in Sources */,
 				B5C91ACF296E92C600CB7B31 /* ImageAnalysisViewController.swift in Sources */,
 				B54B6F5C296D72DE00AC5A0B /* SceneDelegate.swift in Sources */,
 			);
@@ -232,6 +299,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B56ECF292970F1DC004E57F9 /* LinguisticServiceTests.swift in Sources */,
+				B56ECF3A29726CA4004E57F9 /* ReadJSONTests.swift in Sources */,
 				B56ECF202970F137004E57F9 /* VisionTestTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -389,7 +457,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 39WWX2FY3V;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = VisionTest/Info.plist;
+				INFOPLIST_FILE = VisionTest/settings/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -417,7 +485,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 39WWX2FY3V;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = VisionTest/Info.plist;
+				INFOPLIST_FILE = VisionTest/settings/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -511,6 +579,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B56ECF2C29712BDE004E57F9 /* XCRemoteSwiftPackageReference "swift-algorithms" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-algorithms.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B56ECF2D29712BDE004E57F9 /* Algorithms */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B56ECF2C29712BDE004E57F9 /* XCRemoteSwiftPackageReference "swift-algorithms" */;
+			productName = Algorithms;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B54B6F4E296D72DE00AC5A0B /* Project object */;
 }

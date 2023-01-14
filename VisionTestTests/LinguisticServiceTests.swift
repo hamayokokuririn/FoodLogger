@@ -29,8 +29,11 @@ class LinguisticServiceTests: XCTestCase {
     func testMakeTagByNL() {
         let s = LinguisticService()
         let result = s.makeTagByNL(text: text)
-        XCTAssertEqual(result[0].0, "野菜")
-        XCTAssertEqual(result[0].1, NLTag.otherWord)
+        XCTAssertEqual(result[0].text, "野菜")
+        XCTAssertEqual(result[0].tag, NLTag.otherWord)
+        
+        XCTAssertEqual(result[1].text, "（")
+        XCTAssertEqual(result[1].tag, NLTag.punctuation)
     }
     
     func testOmmitOunctuation() {

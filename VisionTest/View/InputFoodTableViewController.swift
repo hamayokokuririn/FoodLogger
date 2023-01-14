@@ -1,5 +1,5 @@
 //
-//  TableViewController.swift
+//  InputFoodTableViewController.swift
 //  VisionTest
 //
 //  Created by 齋藤健悟 on 2023/01/13.
@@ -7,19 +7,9 @@
 
 import UIKit
 
-class TableViewController: UITableViewController {
+class InputFoodTableViewController: UITableViewController {
 
     var wordList = [String]()
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
-    }
 
     // MARK: - Table view data source
 
@@ -34,10 +24,10 @@ class TableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: "InputFoodCell")
         let word = wordList[indexPath.row]
-        cell.textLabel?.text = word
-        return cell
+        cell?.textLabel?.text = word
+        return cell!
     }
 
 }

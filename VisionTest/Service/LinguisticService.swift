@@ -7,6 +7,7 @@
 
 import Foundation
 import NaturalLanguage
+import Algorithms
 
 struct LinguisticService {
     
@@ -31,7 +32,9 @@ struct LinguisticService {
         }
     }
     
-    func makeTagByNL(text: String) -> [(String, NLTag)] {
+    typealias TextTag = (text: String, tag: NLTag)
+    
+    func makeTagByNL(text: String) -> [TextTag] {
         let tagger = NLTagger(tagSchemes: [.lexicalClass])
         tagger.string = text
         let options: NLTagger.Options = [.joinNames, .omitWhitespace]
@@ -47,28 +50,14 @@ struct LinguisticService {
         return array
     }
     
-    func ommitPunctuation(array: [(String, NLTag)]) -> [String] {
-        var oneWordArray = [String]()
-        var oneWordResult = [String]()
-        for wordAndTag in array {
-            if wordAndTag.1 == NLTag.punctuation {
-               if oneWordArray.count > 0 {
-                   let reduced = oneWordArray.reduce("") { $0 + $1 }
-                   oneWordResult.append(reduced)
-                   oneWordArray.removeAll()
-               }
-               continue
-            }
-               
-            oneWordArray.append(wordAndTag.0)
-        }
-        if !oneWordArray.isEmpty {
-            let reduced = oneWordArray.reduce("") { $0 + $1 }
-            oneWordResult.append(reduced)
-        }
-        
-        return oneWordResult
+func ommitPunctuation(array: [TextTag]) -> [String] {
+    return array.chunked(by: {
+        $0.tag == $1.tag
+    }).filter {
+        $0.first?.tag == .otherWord
+    }.map {
+        $0.reduce("") { $0 + $1.text }
     }
-    
+}
     
 }
