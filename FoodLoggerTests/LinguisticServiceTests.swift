@@ -36,6 +36,18 @@ class LinguisticServiceTests: XCTestCase {
         XCTAssertEqual(result[1].tag, NLTag.punctuation)
     }
     
+    func testMakeTagByNL_人参() {
+        let s = LinguisticService()
+        let expectations = [("人参", NLTag.noun),
+                     ("にんじん", NLTag.otherWord),
+                     ("ニンジン", NLTag.otherWord),]
+        for exp in expectations {
+            let result = s.makeTagByNL(text: exp.0)
+            XCTAssertEqual(result[0].text, exp.0)
+            XCTAssertEqual(result[0].tag, exp.1)
+        }
+    }
+    
     func testOmmitOunctuation() {
         let s = LinguisticService()
         let tags = s.makeTagByNL(text: text)
@@ -44,6 +56,18 @@ class LinguisticServiceTests: XCTestCase {
         XCTAssertEqual(result[1], "じゃがいも")
         XCTAssertEqual(result[2], "国産")
         XCTAssertEqual(result[3], "にんじん")
+    }
+    
+    func testOmmitOunctuation_1単語のみ() {
+        let s = LinguisticService()
+        let wordList = [("野菜", 1),
+                        ("人参", 1),
+                        ("（", 0)]
+        for word in wordList {
+            let tags = s.makeTagByNL(text: word.0)
+            let result = s.ommitPunctuation(array: tags)
+            XCTAssertEqual(result.count, word.1)
+        }
     }
     
 }

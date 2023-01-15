@@ -24,10 +24,12 @@ class InputFoodTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "InputFoodCell")
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "InputFoodCell", for: indexPath) as? InputFoodCell else {
+            return UITableViewCell()
+        }
         let word = wordList[indexPath.row]
-        cell?.textLabel?.text = word
-        return cell!
+        cell.setup(name: word, date: "2020年1月31日")
+        return cell
     }
 
 }

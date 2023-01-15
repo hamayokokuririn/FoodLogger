@@ -13,7 +13,9 @@ class ImageAnalysisViewController: UIViewController {
 
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var resultLabel: UILabel!
     @IBOutlet weak var scrollView: UIScrollView!
+    
     
     let analyzer = ImageAnalyzer()
     let interaction = ImageAnalysisInteraction()
@@ -22,6 +24,7 @@ class ImageAnalysisViewController: UIViewController {
         super.viewDidLoad()
         addDoneButtonToTextView()
         addTextRecognition()
+        textView.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -37,21 +40,27 @@ class ImageAnalysisViewController: UIViewController {
                                                object: nil)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let nextVC = segue.destination as? InputFoodTableViewController else { return }
+        nextVC.wordList = makeWords()
+    }
+    
     @objc private func keyboardWillShow(_ notification: Notification) {
         let info = notification.userInfo!
         
         let keyboardFrame = (info[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
         
-        // bottom of textField
-        let bottomTextField = textView.frame.maxY
+        // stackview
+        let bottomTextField = textView.superview?.frame.maxY ?? .zero
         // top of keyboard
         let topKeyboard = UIScreen.main.bounds.height - keyboardFrame.size.height
+        let bar = navigationController?.navigationBar.frame.height ?? .zero
+        let safe = view.safeAreaInsets.top
         // 重なり
-        let distance = bottomTextField - topKeyboard
+        let distance = bottomTextField + safe - topKeyboard
         
         if distance >= 0 {
-            // scrollViewのコンテツを上へオフセット + 50.0(追加のオフセット)
-            scrollView.contentOffset.y = distance + 50.0
+            scrollView.contentOffset.y = distance
         }
     }
     
@@ -102,16 +111,18 @@ class ImageAnalysisViewController: UIViewController {
         }
     }
     
-    @IBAction func didPushRegister(_ sender: Any) {
-        guard let input = textView.text else { return }
+    private func makeWords() -> [String] {
+        guard let input = textView.text else { return [] }
         let service = LinguisticService()
         let tags = service.makeTagByNL(text: input)
-        let words = service.ommitPunctuation(array: tags)
-        
-        guard let vc = storyboard?.instantiateViewController(withIdentifier: "tableViewController") as? InputFoodTableViewController else {return}
-        vc.wordList = words
-        navigationController?.pushViewController(vc, animated: true)
+        return service.ommitPunctuation(array: tags)
+    }
+}
+
+extension ImageAnalysisViewController: UITextViewDelegate {
+    
+    func textViewDidChange(_ textView: UITextView) {
+        self.resultLabel.text = makeWords().reduce("", { $0 + $1 + "/"})
     }
     
-
 }

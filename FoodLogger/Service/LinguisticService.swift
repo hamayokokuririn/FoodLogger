@@ -36,6 +36,7 @@ struct LinguisticService {
     
     func makeTagByNL(text: String) -> [TextTag] {
         let tagger = NLTagger(tagSchemes: [.lexicalClass])
+        tagger.setLanguage(NLLanguage.japanese, range: text.startIndex..<text.endIndex)
         tagger.string = text
         let options: NLTagger.Options = [.joinNames, .omitWhitespace]
         
@@ -55,6 +56,7 @@ func ommitPunctuation(array: [TextTag]) -> [String] {
         $0.tag == $1.tag
     }).filter {
         $0.first?.tag == .otherWord
+        || $0.first?.tag == .noun
     }.map {
         $0.reduce("") { $0 + $1.text }
     }
