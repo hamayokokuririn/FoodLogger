@@ -16,3 +16,9 @@ struct ShouldCheckFood: Food {
     var checked: Bool = false
     var otherNames: [String] = []
 }
+
+struct InputedFood: Food {
+    let name: String
+    var shouldCheck: Bool = false
+    var registeredDate: Date?
+}

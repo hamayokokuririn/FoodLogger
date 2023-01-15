@@ -109,11 +109,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ShouldCheckFoodCell" textLabel="M3d-pE-yNN" detailTextLabel="DWS-F5-Cr2" style="IBUITableViewCellStyleValue1" id="NGz-c9-sh6">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="ShouldCheckFoodCell" textLabel="M3d-pE-yNN" detailTextLabel="DWS-F5-Cr2" style="IBUITableViewCellStyleValue1" id="NGz-c9-sh6">
                                 <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NGz-c9-sh6" id="OtG-o4-2lc">
-                                    <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="349" height="43.666667938232422"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="M3d-pE-yNN">
@@ -124,7 +124,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="DWS-F5-Cr2">
-                                            <rect key="frame" x="340.33333333333331" y="15" width="32.666666666666664" height="14.333333333333334"/>
+                                            <rect key="frame" x="308.33333333333331" y="15" width="32.666666666666664" height="14.333333333333334"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
                                             <nil key="textColor"/>
@@ -317,13 +317,45 @@
                             <outlet property="delegate" destination="4gK-XX-7d4" id="WZz-QN-dPl"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="Fgo-gU-d6o">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="dVw-Nb-GAl"/>
+                    <navigationItem key="navigationItem" title="入力された食品" id="Fgo-gU-d6o">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="dVw-Nb-GAl">
+                            <connections>
+                                <segue destination="grh-Qk-sw2" kind="show" identifier="toSaveComplete" id="MXM-eg-RzB"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1TH-EB-6SU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1849.6183206106869" y="1966.9014084507044"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="sEU-h4-882">
+            <objects>
+                <viewController id="grh-Qk-sw2" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4MT-A3-8Bk">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="保存しました" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gOc-AM-ize">
+                                <rect key="frame" x="144.66666666666666" y="415.66666666666669" width="104" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="10P-hy-EqR"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="gOc-AM-ize" firstAttribute="centerY" secondItem="4MT-A3-8Bk" secondAttribute="centerY" id="Piz-IO-CRV"/>
+                            <constraint firstItem="gOc-AM-ize" firstAttribute="centerX" secondItem="4MT-A3-8Bk" secondAttribute="centerX" id="hK3-27-tOc"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="SEv-vR-UFv"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sLO-ZY-AEb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2639" y="1967"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="qy9-ZY-wk3">

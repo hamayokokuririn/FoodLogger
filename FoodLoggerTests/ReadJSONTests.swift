@@ -14,7 +14,7 @@ final class ReadJSONTests: XCTestCase {
     
     func testRead() {
         do {
-            let result = try reader.read(fileName: .food_1)
+            let result = try reader.read()
             XCTAssertEqual("米(うるち米・もち米・米粉)", result[0])
         } catch {
             XCTFail()

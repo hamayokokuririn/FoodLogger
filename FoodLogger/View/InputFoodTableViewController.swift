@@ -10,6 +10,16 @@ import UIKit
 class InputFoodTableViewController: UITableViewController {
 
     var wordList = [String]()
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let dataStore = InputedFoodDataStore()
+        Task {
+            let list = wordList.map {
+                InputedFood(name: $0, registeredDate: Date())
+            }
+            await dataStore.insert(foodList: list)
+        }
+    }
 
     // MARK: - Table view data source
 

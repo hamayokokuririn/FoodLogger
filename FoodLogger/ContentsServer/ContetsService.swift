@@ -9,17 +9,15 @@ import Foundation
 
 
 actor ContentsService<Reader: JSONReader> {
-    let reader: Reader
-    init(reader: Reader) {
-        self.reader = reader
+    let inputDataStore = InputedFoodDataStore()
+    let shouldCheckDataStore: ShouldCheckFoodDataStore<Reader>
+    
+    init(reader: Reader) throws {
+        self.shouldCheckDataStore = try ShouldCheckFoodDataStore(reader: reader)
     }
     
-    func fetchShouldCheckFoodList(fileName: Reader.FileName) async throws -> [ShouldCheckFood] {
-        let readData = try reader.read(fileName: fileName)
-        let foodList = readData.map {
-            ShouldCheckFood(name: $0)
-        }
-        
+    func fetchShouldCheckFoodList() async -> [ShouldCheckFood] {
+        let foodList = await shouldCheckDataStore.getFoodList()
         // TODO: データ側で処理したい
         let addedList = addOtherNames(preData: foodList)
         

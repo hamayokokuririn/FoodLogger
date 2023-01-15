@@ -11,17 +11,12 @@ import UIKit
 final class ShouldCheckFoodTableViewController: UITableViewController {
     
     var foodList: [ShouldCheckFood] = []
-    let content = ContentsService(reader: ReadJSONForSaitamaSyokuhin())
     
     override func viewDidLoad() {
         super.viewDidLoad()
         Task {
-            do {
-                foodList = try await content.fetchShouldCheckFoodList(fileName: .food_1)
-                tableView.reloadData()
-            } catch {
-                fatalError()
-            }
+            foodList = await Environment.shared.contentService.fetchShouldCheckFoodList()
+            tableView.reloadData()
         }
     }
     
