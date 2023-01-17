@@ -43,6 +43,14 @@ class ImageAnalysisViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let nextVC = segue.destination as? InputFoodTableViewController else { return }
         nextVC.wordList = makeWords()
+        Task {
+            let input = await Environment.shared.contentService.inputDataStore.getFoodList()
+            let shouldCheckList = await Environment.shared.contentService.fetchShouldCheckFoodList()
+            nextVC.viewModel = InputFoodTableViewModel(wordList: makeWords(),
+                                                       inputedList: input,
+                                                       shouldCheckList: shouldCheckList)
+            
+        }
     }
     
     @objc private func keyboardWillShow(_ notification: Notification) {
@@ -54,7 +62,6 @@ class ImageAnalysisViewController: UIViewController {
         let bottomTextField = textView.superview?.frame.maxY ?? .zero
         // top of keyboard
         let topKeyboard = UIScreen.main.bounds.height - keyboardFrame.size.height
-        let bar = navigationController?.navigationBar.frame.height ?? .zero
         let safe = view.safeAreaInsets.top
         // 重なり
         let distance = bottomTextField + safe - topKeyboard

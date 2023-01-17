@@ -309,6 +309,7 @@
                                 <connections>
                                     <outlet property="foodName" destination="lSz-7I-Rs9" id="8bG-68-eZZ"/>
                                     <outlet property="lastDate" destination="q8E-zc-lmP" id="VWa-yP-9se"/>
+                                    <outlet property="switchStackView" destination="kZ0-PU-bbP" id="IPH-Lk-xSE"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

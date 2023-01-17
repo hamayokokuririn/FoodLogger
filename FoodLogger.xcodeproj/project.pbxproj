@@ -29,6 +29,9 @@
 		B57BD15F2973AC69006C9D79 /* InputedFoodDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57BD15E2973AC69006C9D79 /* InputedFoodDataStore.swift */; };
 		B57BD1612973D2B3006C9D79 /* ShouldCheckFoodDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57BD1602973D2B3006C9D79 /* ShouldCheckFoodDataStore.swift */; };
 		B57BD1632973DBF3006C9D79 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57BD1622973DBF3006C9D79 /* Environment.swift */; };
+		B57BD1652973EDDE006C9D79 /* InputFoodTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57BD1642973EDDE006C9D79 /* InputFoodTableViewModel.swift */; };
+		B57BD1672973F457006C9D79 /* InputFoodTableViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57BD1662973F457006C9D79 /* InputFoodTableViewModelTests.swift */; };
+		B57BD1692974DB46006C9D79 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57BD1682974DB46006C9D79 /* DateExtension.swift */; };
 		B5C91ACF296E92C600CB7B31 /* ImageAnalysisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C91ACD296E92C600CB7B31 /* ImageAnalysisViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +70,9 @@
 		B57BD15E2973AC69006C9D79 /* InputedFoodDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputedFoodDataStore.swift; sourceTree = "<group>"; };
 		B57BD1602973D2B3006C9D79 /* ShouldCheckFoodDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShouldCheckFoodDataStore.swift; sourceTree = "<group>"; };
 		B57BD1622973DBF3006C9D79 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		B57BD1642973EDDE006C9D79 /* InputFoodTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFoodTableViewModel.swift; sourceTree = "<group>"; };
+		B57BD1662973F457006C9D79 /* InputFoodTableViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFoodTableViewModelTests.swift; sourceTree = "<group>"; };
+		B57BD1682974DB46006C9D79 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		B5C91ACD296E92C600CB7B31 /* ImageAnalysisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAnalysisViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -111,8 +117,8 @@
 			isa = PBXGroup;
 			children = (
 				B56ECF3F2972ADBF004E57F9 /* settings */,
-				B56ECF322972513B004E57F9 /* ContentsServer */,
 				B56ECF2F2972453D004E57F9 /* CheckListData */,
+				B56ECF322972513B004E57F9 /* ContentsServer */,
 				B56ECF402972AE0F004E57F9 /* Service */,
 				B56ECF412972AE16004E57F9 /* View */,
 			);
@@ -125,6 +131,7 @@
 				B56ECF282970F1DC004E57F9 /* LinguisticServiceTests.swift */,
 				B56ECF3929726CA4004E57F9 /* ReadJSONTests.swift */,
 				B56ECF422972FF6D004E57F9 /* ContentsServiceTests.swift */,
+				B57BD1662973F457006C9D79 /* InputFoodTableViewModelTests.swift */,
 			);
 			path = FoodLoggerTests;
 			sourceTree = "<group>";
@@ -167,6 +174,7 @@
 			children = (
 				B56ECF172970E872004E57F9 /* KeyboardExtension.swift */,
 				B56ECF262970F184004E57F9 /* LinguisticService.swift */,
+				B57BD1682974DB46006C9D79 /* DateExtension.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -177,6 +185,7 @@
 				B54B6F5F296D72DE00AC5A0B /* Main.storyboard */,
 				B54B6F5D296D72DE00AC5A0B /* FoodInputViewController.swift */,
 				B56ECF2A297102BE004E57F9 /* InputFoodTableViewController.swift */,
+				B57BD1642973EDDE006C9D79 /* InputFoodTableViewModel.swift */,
 				B5C91ACD296E92C600CB7B31 /* ImageAnalysisViewController.swift */,
 				B56ECF3D2972ACF1004E57F9 /* ShouldCheckFoodTableViewController.swift */,
 				B57BD15B2973958E006C9D79 /* InputFoodCell.swift */,
@@ -293,9 +302,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				B56ECF3C2972A081004E57F9 /* Food.swift in Sources */,
+				B57BD1692974DB46006C9D79 /* DateExtension.swift in Sources */,
 				B56ECF272970F184004E57F9 /* LinguisticService.swift in Sources */,
 				B56ECF182970E872004E57F9 /* KeyboardExtension.swift in Sources */,
 				B56ECF2B297102BE004E57F9 /* InputFoodTableViewController.swift in Sources */,
+				B57BD1652973EDDE006C9D79 /* InputFoodTableViewModel.swift in Sources */,
 				B57BD1632973DBF3006C9D79 /* Environment.swift in Sources */,
 				B56ECF342972516E004E57F9 /* ContetsService.swift in Sources */,
 				B54B6F5E296D72DE00AC5A0B /* FoodInputViewController.swift in Sources */,
@@ -314,6 +325,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B57BD1672973F457006C9D79 /* InputFoodTableViewModelTests.swift in Sources */,
 				B56ECF292970F1DC004E57F9 /* LinguisticServiceTests.swift in Sources */,
 				B56ECF3A29726CA4004E57F9 /* ReadJSONTests.swift in Sources */,
 				B56ECF432972FF6D004E57F9 /* ContentsServiceTests.swift in Sources */,

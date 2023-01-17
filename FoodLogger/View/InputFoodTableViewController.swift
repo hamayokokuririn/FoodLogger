@@ -10,14 +10,23 @@ import UIKit
 class InputFoodTableViewController: UITableViewController {
 
     var wordList = [String]()
+    var viewModel: InputFoodTableViewModel! = nil  {
+        didSet {
+            self.tableView.reloadData()
+        }
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let dataStore = InputedFoodDataStore()
+        // 保存処理
+        // 食事情報
+        // check listの更新
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         Task {
-            let list = wordList.map {
-                InputedFood(name: $0, registeredDate: Date())
-            }
-            await dataStore.insert(foodList: list)
+            self.viewModel.inputedList = await Environment.shared.contentService.inputDataStore.getFoodList()
+            tableView.reloadData()
         }
     }
 
@@ -37,9 +46,16 @@ class InputFoodTableViewController: UITableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "InputFoodCell", for: indexPath) as? InputFoodCell else {
             return UITableViewCell()
         }
-        let word = wordList[indexPath.row]
-        cell.setup(name: word, date: "2020年1月31日")
+        guard let cellData = viewModel?.cellShowDataList[indexPath.row] else {
+            return UITableViewCell()
+        }
+        
+        cell.setup(name: cellData.name,
+                   date: cellData.dateString,
+                   shouldCheckFood: cellData.shouldCheck)
         return cell
     }
+    
+    
 
 }

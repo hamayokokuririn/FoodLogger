@@ -11,10 +11,13 @@ import UIKit
 final class InputFoodCell: UITableViewCell {
     @IBOutlet private weak var foodName: UILabel!
     @IBOutlet private weak var lastDate: UILabel!
+    @IBOutlet weak var switchStackView: UIStackView!
     
-    func setup(name: String, date: String) {
+    
+    func setup(name: String, date: String, shouldCheckFood: Bool) {
         foodName.text = name
         lastDate.text = date
+        switchStackView.isHidden = !shouldCheckFood
     }
     
 }

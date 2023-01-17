@@ -42,6 +42,8 @@ final class ShouldCheckFoodTableViewController: UITableViewController {
         conf.text = food.name
         conf.secondaryText = food.otherNames.reduce("", {$0 + "/" + $1})
         cell.contentConfiguration = conf
+        cell.accessoryType = food.checked ? .checkmark: .none
+        
         return cell
     }
 }
