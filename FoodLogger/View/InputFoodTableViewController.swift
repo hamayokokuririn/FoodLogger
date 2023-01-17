@@ -10,7 +10,7 @@ import UIKit
 class InputFoodTableViewController: UITableViewController {
 
     var wordList = [String]()
-    var viewModel: InputFoodTableViewModel! = nil  {
+    var viewModel: InputFoodTableViewModel? = nil  {
         didSet {
             self.tableView.reloadData()
         }
@@ -24,10 +24,7 @@ class InputFoodTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        Task {
-            self.viewModel.inputedList = await Environment.shared.contentService.inputDataStore.getFoodList()
-            tableView.reloadData()
-        }
+        tableView.reloadData()
     }
 
     // MARK: - Table view data source
