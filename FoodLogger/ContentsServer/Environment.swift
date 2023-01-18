@@ -7,15 +7,16 @@
 
 import Foundation
 
-class Environment {
-    static let shared = Environment()
-    let contentService: ContentsService<ReadJSONForSaitamaSyokuhin>
+protocol Environment {
+    associatedtype Reader: JSONReader
+    associatedtype InputDataStore
     
-    private init() {
-        do {
-            self.contentService = try ContentsService(reader: ReadJSONForSaitamaSyokuhin())
-        } catch {
-            fatalError()
-        }
-    }
+    var reader: Reader { get }
+}
+
+struct Staging: Environment {
+    typealias Reader = ReadJSONForSaitamaSyokuhin
+    typealias InputDataStore = InputedFoodDataStore
+    
+    let reader = ReadJSONForSaitamaSyokuhin()
 }

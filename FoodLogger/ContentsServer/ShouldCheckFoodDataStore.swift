@@ -28,4 +28,14 @@ actor ShouldCheckFoodDataStore<Reader: JSONReader> {
     func getFoodList() -> [ShouldCheckFood] {
         shouldCheckFoodList
     }
+    
+    func updateFoodList(foodList: [ShouldCheckFood]) {
+        for otherFood in foodList {
+            if let index = shouldCheckFoodList.firstIndex(where: { food in
+                food.hasSameName(with: otherFood.name)
+            }) {
+                shouldCheckFoodList[index] = otherFood
+            }
+        }
+    }
 }

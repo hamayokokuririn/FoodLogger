@@ -12,10 +12,11 @@ final class ShouldCheckFoodTableViewController: UITableViewController {
     
     var foodList: [ShouldCheckFood] = []
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
         Task {
-            foodList = await Environment.shared.contentService.fetchShouldCheckFoodList()
+            foodList = await UIApplication.shared.contentsService.fetchShouldCheckFoodList()
             tableView.reloadData()
         }
     }

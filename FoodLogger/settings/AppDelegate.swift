@@ -7,10 +7,29 @@
 
 import UIKit
 
+extension UIApplication {
+    var contentsService: ContentsService<Staging> {
+        guard let appDelegate = delegate as? AppDelegate else {
+            fatalError()
+        }
+        return appDelegate.contentsService
+    }
+}
+
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    let contentsService: ContentsService<Staging>
+    
+    override init() {
+        do {
+            self.contentsService = try ContentsService(env: Staging())
+            super.init()
+        } catch {
+            fatalError("アプリの起動に失敗しました")
+        }
+        
+    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.

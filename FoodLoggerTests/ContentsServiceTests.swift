@@ -10,10 +10,10 @@ import XCTest
 @testable import FoodLogger
 
 final class ContentsServiceTests: XCTestCase {
-    var service: ContentsService<TestReader>! = nil
+    var service: ContentsService<TestEnv>! = nil
     
     override func setUp() async throws {
-        self.service = try ContentsService(reader: TestReader())
+        self.service = try ContentsService(env: TestEnv())
     }
     
     func testFetchShouldCheckFoodList() async throws {
@@ -24,6 +24,12 @@ final class ContentsServiceTests: XCTestCase {
         XCTAssertEqual(result[1].otherNames, [])
         XCTAssertEqual(result[2].name, "人参")
         XCTAssertEqual(result[2].otherNames, ["にんじん", "ニンジン"])
+    }
+    
+    class TestEnv: Environment {
+        var reader = TestReader()
+        typealias Reader = TestReader
+        typealias InputDataStore = String
     }
     
     class TestReader: JSONReader {

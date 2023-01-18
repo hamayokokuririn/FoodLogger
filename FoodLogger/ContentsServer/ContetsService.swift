@@ -8,12 +8,13 @@
 import Foundation
 
 
-actor ContentsService<Reader: JSONReader> {
-    let inputDataStore = InputedFoodDataStore()
-    let shouldCheckDataStore: ShouldCheckFoodDataStore<Reader>
+actor ContentsService<Env: Environment> {
     
-    init(reader: Reader) throws {
-        self.shouldCheckDataStore = try ShouldCheckFoodDataStore(reader: reader)
+    let inputDataStore = InputedFoodDataStore()
+    let shouldCheckDataStore: ShouldCheckFoodDataStore<Env.Reader>
+    
+    init(env: Env) throws {
+        self.shouldCheckDataStore = try ShouldCheckFoodDataStore(reader: env.reader)
     }
     
     func fetchShouldCheckFoodList() async -> [ShouldCheckFood] {

@@ -44,8 +44,8 @@ class ImageAnalysisViewController: UIViewController {
         guard let nextVC = segue.destination as? InputFoodTableViewController else { return }
         nextVC.wordList = makeWords()
         Task {
-            let input = await Environment.shared.contentService.inputDataStore.getFoodList()
-            let shouldCheckList = await Environment.shared.contentService.fetchShouldCheckFoodList()
+            let input = await UIApplication.shared.contentsService.inputDataStore.getFoodList()
+            let shouldCheckList = await UIApplication.shared.contentsService.fetchShouldCheckFoodList()
             nextVC.viewModel = InputFoodTableViewModel(wordList: makeWords(),
                                                        inputedList: input,
                                                        shouldCheckList: shouldCheckList)
