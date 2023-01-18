@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B52FF3FC2977FA2500391822 /* ShouldCheckFoodCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52FF3FB2977FA2500391822 /* ShouldCheckFoodCell.swift */; };
 		B54B6F5A296D72DE00AC5A0B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54B6F59296D72DE00AC5A0B /* AppDelegate.swift */; };
 		B54B6F5C296D72DE00AC5A0B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54B6F5B296D72DE00AC5A0B /* SceneDelegate.swift */; };
 		B54B6F5E296D72DE00AC5A0B /* FoodInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54B6F5D296D72DE00AC5A0B /* FoodInputViewController.swift */; };
@@ -18,7 +19,7 @@
 		B56ECF292970F1DC004E57F9 /* LinguisticServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56ECF282970F1DC004E57F9 /* LinguisticServiceTests.swift */; };
 		B56ECF2B297102BE004E57F9 /* InputFoodTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56ECF2A297102BE004E57F9 /* InputFoodTableViewController.swift */; };
 		B56ECF2E29712BDE004E57F9 /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = B56ECF2D29712BDE004E57F9 /* Algorithms */; };
-		B56ECF342972516E004E57F9 /* ContetsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56ECF332972516E004E57F9 /* ContetsService.swift */; };
+		B56ECF342972516E004E57F9 /* ContentsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56ECF332972516E004E57F9 /* ContentsService.swift */; };
 		B56ECF3629726BE1004E57F9 /* food_1.json in Resources */ = {isa = PBXBuildFile; fileRef = B56ECF3529726BE1004E57F9 /* food_1.json */; };
 		B56ECF3829726C30004E57F9 /* ReadJSONForSaitamaSyokuhin.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56ECF3729726C30004E57F9 /* ReadJSONForSaitamaSyokuhin.swift */; };
 		B56ECF3A29726CA4004E57F9 /* ReadJSONTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56ECF3929726CA4004E57F9 /* ReadJSONTests.swift */; };
@@ -47,6 +48,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B52FF3FB2977FA2500391822 /* ShouldCheckFoodCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShouldCheckFoodCell.swift; sourceTree = "<group>"; };
 		B54B6F56296D72DE00AC5A0B /* FoodLogger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodLogger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B54B6F59296D72DE00AC5A0B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B54B6F5B296D72DE00AC5A0B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -60,7 +62,7 @@
 		B56ECF262970F184004E57F9 /* LinguisticService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinguisticService.swift; sourceTree = "<group>"; };
 		B56ECF282970F1DC004E57F9 /* LinguisticServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinguisticServiceTests.swift; sourceTree = "<group>"; };
 		B56ECF2A297102BE004E57F9 /* InputFoodTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFoodTableViewController.swift; sourceTree = "<group>"; };
-		B56ECF332972516E004E57F9 /* ContetsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContetsService.swift; sourceTree = "<group>"; };
+		B56ECF332972516E004E57F9 /* ContentsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentsService.swift; sourceTree = "<group>"; };
 		B56ECF3529726BE1004E57F9 /* food_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = food_1.json; path = ../../../pdfToText/jupyter/food_1.json; sourceTree = "<group>"; };
 		B56ECF3729726C30004E57F9 /* ReadJSONForSaitamaSyokuhin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadJSONForSaitamaSyokuhin.swift; sourceTree = "<group>"; };
 		B56ECF3929726CA4004E57F9 /* ReadJSONTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadJSONTests.swift; sourceTree = "<group>"; };
@@ -150,7 +152,7 @@
 		B56ECF322972513B004E57F9 /* ContentsServer */ = {
 			isa = PBXGroup;
 			children = (
-				B56ECF332972516E004E57F9 /* ContetsService.swift */,
+				B56ECF332972516E004E57F9 /* ContentsService.swift */,
 				B57BD1622973DBF3006C9D79 /* Environment.swift */,
 				B57BD15E2973AC69006C9D79 /* InputedFoodDataStore.swift */,
 				B57BD1602973D2B3006C9D79 /* ShouldCheckFoodDataStore.swift */,
@@ -192,6 +194,7 @@
 				B5C91ACD296E92C600CB7B31 /* ImageAnalysisViewController.swift */,
 				B56ECF3D2972ACF1004E57F9 /* ShouldCheckFoodTableViewController.swift */,
 				B57BD15B2973958E006C9D79 /* InputFoodCell.swift */,
+				B52FF3FB2977FA2500391822 /* ShouldCheckFoodCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -309,9 +312,10 @@
 				B56ECF272970F184004E57F9 /* LinguisticService.swift in Sources */,
 				B56ECF182970E872004E57F9 /* KeyboardExtension.swift in Sources */,
 				B56ECF2B297102BE004E57F9 /* InputFoodTableViewController.swift in Sources */,
+				B52FF3FC2977FA2500391822 /* ShouldCheckFoodCell.swift in Sources */,
 				B57BD1652973EDDE006C9D79 /* InputFoodTableViewModel.swift in Sources */,
 				B57BD1632973DBF3006C9D79 /* Environment.swift in Sources */,
-				B56ECF342972516E004E57F9 /* ContetsService.swift in Sources */,
+				B56ECF342972516E004E57F9 /* ContentsService.swift in Sources */,
 				B54B6F5E296D72DE00AC5A0B /* FoodInputViewController.swift in Sources */,
 				B57BD15C2973958E006C9D79 /* InputFoodCell.swift in Sources */,
 				B56ECF3E2972ACF1004E57F9 /* ShouldCheckFoodTableViewController.swift in Sources */,

@@ -36,14 +36,11 @@ final class ShouldCheckFoodTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ShouldCheckFoodCell", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "ShouldCheckFoodCell", for: indexPath) as? ShouldCheckFoodCell else { return UITableViewCell() }
         let food = foodList[indexPath.row]
-        
-        var conf = cell.defaultContentConfiguration()
-        conf.text = food.name
-        conf.secondaryText = food.otherNames.reduce("", {$0 + "/" + $1})
-        cell.contentConfiguration = conf
-        cell.accessoryType = food.checked ? .checkmark: .none
+        let otherNames: String? = food.otherNames.isEmpty ? nil : food.otherNames.joined(separator: "/")
+        cell.setup(name: food.name, otherNames: otherNames)
+        cell.didChangeCheck(checked: food.checked)        
         
         return cell
     }
