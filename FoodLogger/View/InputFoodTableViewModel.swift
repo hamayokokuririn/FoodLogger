@@ -6,12 +6,13 @@
 //
 
 import Foundation
+import UIKit
 
 struct InputFoodTableViewModel {
     struct CellShowData {
         let name: String
         let dateString: String
-        let shouldCheck: Bool
+        var shouldCheck: Bool
     }
     
     var inputedList = [InputedFood]()
@@ -23,12 +24,11 @@ struct InputFoodTableViewModel {
         self.inputedList = inputedList
         self.cellShowDataList = wordList.map { word in
             let date = Self.dateForName(word: word, inputedList: inputedList)
-            let shouldCheck = Self.shouldCheckForName(word: word, shouldCheckList: shouldCheckList)
+            let shouldCheck = Self.shouldCheckForName(word: word, inputShouldCheckList: shouldCheckList)
             return CellShowData(name: word,
                                 dateString: date,
                                 shouldCheck: shouldCheck)
         }
-        
     }
     
     static let emptyDateString = "---"
@@ -53,12 +53,26 @@ struct InputFoodTableViewModel {
     }
     
     
-    static func shouldCheckForName(word: String, shouldCheckList: [ShouldCheckFood]) -> Bool {
+    static func shouldCheckForName(word: String, inputShouldCheckList: [ShouldCheckFood]) -> Bool {
         
-        return shouldCheckList.contains { food in
+        return inputShouldCheckList.contains { food in
             return food.hasSameName(with: word)
         }
     }
     
+    func onPrepare() async {
+        await UIApplication.shared.contentsService.inputDataStore.insert(foodList: inputedList)
+        
+        let list = cellShowDataList.map {
+            return ($0.name, $0.shouldCheck)
+        }
+        await UIApplication.shared.contentsService.shouldCheckDataStore.updateFoodList(foodList: list)
+    }
+    
+    mutating func updateShouldCheck(name: String, checked: Bool) {
+        if let index = cellShowDataList.firstIndex(where: {$0.name == name}) {
+            self.cellShowDataList[index].shouldCheck = checked
+        }
+    }
     
 }

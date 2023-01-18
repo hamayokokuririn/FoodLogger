@@ -18,8 +18,9 @@ class InputFoodTableViewController: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // 保存処理
-        // 食事情報
-        // check listの更新
+        Task {
+            await viewModel?.onPrepare()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -40,16 +41,20 @@ class InputFoodTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "InputFoodCell", for: indexPath) as? InputFoodCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "InputFoodCell", for: indexPath) as? InputFoodCell,
+              let viewModel else {
             return UITableViewCell()
         }
-        guard let cellData = viewModel?.cellShowDataList[indexPath.row] else {
-            return UITableViewCell()
-        }
+        let index = indexPath.row
+        let cellData = viewModel.cellShowDataList[index]
         
         cell.setup(name: cellData.name,
                    date: cellData.dateString,
                    shouldCheckFood: cellData.shouldCheck)
+        
+        cell.didSwitchChanged = { changed in
+            self.viewModel?.updateShouldCheck(name: viewModel.cellShowDataList[index].name, checked: changed)
+        }
         return cell
     }
     

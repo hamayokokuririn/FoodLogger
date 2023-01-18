@@ -13,6 +13,7 @@ final class InputFoodCell: UITableViewCell {
     @IBOutlet private weak var lastDate: UILabel!
     @IBOutlet weak var switchStackView: UIStackView!
     
+    var didSwitchChanged: ((Bool) -> Void)?
     
     func setup(name: String, date: String, shouldCheckFood: Bool) {
         foodName.text = name
