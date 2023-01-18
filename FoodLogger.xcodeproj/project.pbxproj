@@ -32,6 +32,7 @@
 		B57BD1652973EDDE006C9D79 /* InputFoodTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57BD1642973EDDE006C9D79 /* InputFoodTableViewModel.swift */; };
 		B57BD1672973F457006C9D79 /* InputFoodTableViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57BD1662973F457006C9D79 /* InputFoodTableViewModelTests.swift */; };
 		B57BD1692974DB46006C9D79 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57BD1682974DB46006C9D79 /* DateExtension.swift */; };
+		B5A760572976AE8E0007B986 /* ShouldCheckFoodTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A760562976AE8E0007B986 /* ShouldCheckFoodTests.swift */; };
 		B5C91ACF296E92C600CB7B31 /* ImageAnalysisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C91ACD296E92C600CB7B31 /* ImageAnalysisViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -73,6 +74,7 @@
 		B57BD1642973EDDE006C9D79 /* InputFoodTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFoodTableViewModel.swift; sourceTree = "<group>"; };
 		B57BD1662973F457006C9D79 /* InputFoodTableViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFoodTableViewModelTests.swift; sourceTree = "<group>"; };
 		B57BD1682974DB46006C9D79 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		B5A760562976AE8E0007B986 /* ShouldCheckFoodTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShouldCheckFoodTests.swift; sourceTree = "<group>"; };
 		B5C91ACD296E92C600CB7B31 /* ImageAnalysisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAnalysisViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -132,6 +134,7 @@
 				B56ECF3929726CA4004E57F9 /* ReadJSONTests.swift */,
 				B56ECF422972FF6D004E57F9 /* ContentsServiceTests.swift */,
 				B57BD1662973F457006C9D79 /* InputFoodTableViewModelTests.swift */,
+				B5A760562976AE8E0007B986 /* ShouldCheckFoodTests.swift */,
 			);
 			path = FoodLoggerTests;
 			sourceTree = "<group>";
@@ -325,6 +328,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5A760572976AE8E0007B986 /* ShouldCheckFoodTests.swift in Sources */,
 				B57BD1672973F457006C9D79 /* InputFoodTableViewModelTests.swift in Sources */,
 				B56ECF292970F1DC004E57F9 /* LinguisticServiceTests.swift in Sources */,
 				B56ECF3A29726CA4004E57F9 /* ReadJSONTests.swift in Sources */,

@@ -15,6 +15,11 @@ struct ShouldCheckFood: Food {
     let name: String
     var checked: Bool = false
     var otherNames: [String] = []
+    
+    func hasSameName(with input: String) -> Bool {
+        let all = otherNames + [name]
+        return all.contains { $0 == input }
+    }
 }
 
 struct InputedFood: Food {

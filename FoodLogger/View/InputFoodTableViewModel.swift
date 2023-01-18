@@ -56,10 +56,7 @@ struct InputFoodTableViewModel {
     static func shouldCheckForName(word: String, shouldCheckList: [ShouldCheckFood]) -> Bool {
         
         return shouldCheckList.contains { food in
-            if food.name == word {
-                return true
-            }
-            return food.otherNames.contains(where: { $0 == word })
+            return food.hasSameName(with: word)
         }
     }
     
