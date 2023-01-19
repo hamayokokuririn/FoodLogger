@@ -15,13 +15,11 @@ struct InputFoodTableViewModel {
         var shouldCheck: Bool
     }
     
-    var inputedList = [InputedFood]()
     var cellShowDataList: [CellShowData]
     
     @MainActor
     init(wordList: [String], inputedList: [InputedFood], shouldCheckList: [ShouldCheckFood]) {
     
-        self.inputedList = inputedList
         self.cellShowDataList = wordList.map { word in
             let date = Self.dateForName(word: word, inputedList: inputedList)
             let shouldCheck = Self.shouldCheckForName(word: word, inputShouldCheckList: shouldCheckList)
@@ -61,6 +59,9 @@ struct InputFoodTableViewModel {
     }
     
     func onPrepare() async {
+        let inputedList = cellShowDataList.map {
+            InputedFood(name: $0.name, registeredDate: Date())
+        }
         await UIApplication.shared.contentsService.inputDataStore.insert(foodList: inputedList)
         
         let list = cellShowDataList.map {
