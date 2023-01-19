@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -83,17 +84,17 @@
             </objects>
             <point key="canvasLocation" x="1060.3053435114502" y="4.9295774647887329"/>
         </scene>
-        <!--入力-->
+        <!--記録-->
         <scene sceneID="JHj-Bo-0zx">
             <objects>
                 <navigationController id="asO-Q1-9H8" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="入力" image="camera.fill" catalog="system" id="mYd-oc-hzi"/>
+                    <tabBarItem key="tabBarItem" title="記録" image="text.book.closed.fill" catalog="system" id="mYd-oc-hzi"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Kb8-Wq-NkB">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="mS8-lw-njG" kind="relationship" relationship="rootViewController" id="UZO-Wa-kJB"/>
+                        <segue destination="qjp-Pq-OCG" kind="relationship" relationship="rootViewController" id="oSq-J6-zWg"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yKh-h3-hv3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -247,7 +248,7 @@
                             <constraint firstItem="aJ1-Hu-yhl" firstAttribute="top" secondItem="K65-qg-CSR" secondAttribute="top" id="xvp-8F-6jj"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="食品名取得" prompt="画像から食品名をコピーできます" id="F51-3O-paK">
+                    <navigationItem key="navigationItem" title="食品入力" prompt="画像から食品名をコピーできます" id="F51-3O-paK">
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="ZP9-QH-VYf">
                             <connections>
                                 <segue destination="4gK-XX-7d4" kind="show" identifier="toInputFoodList" id="AcY-xw-ZyQ"/>
@@ -263,7 +264,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DNA-fM-RwH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="929" y="1967"/>
+            <point key="canvasLocation" x="2115" y="1967"/>
         </scene>
         <!--食品リスト-->
         <scene sceneID="cDI-tW-dvm">
@@ -357,7 +358,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1TH-EB-6SU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1849.6183206106869" y="1966.9014084507044"/>
+            <point key="canvasLocation" x="3037" y="1967"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="sEU-h4-882">
@@ -373,6 +374,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ars-0u-dDv">
+                                <rect key="frame" x="130" y="477" width="139" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <buttonConfiguration key="configuration" style="filled" image="return" catalog="system" title="一覧に戻る"/>
+                                <connections>
+                                    <segue destination="FYA-Pm-FtC" kind="unwind" unwindAction="backToLogListWithSegue:" id="tfu-OT-OLu"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="10P-hy-EqR"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -384,8 +393,9 @@
                     <navigationItem key="navigationItem" id="SEv-vR-UFv"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sLO-ZY-AEb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="FYA-Pm-FtC" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2639" y="1967"/>
+            <point key="canvasLocation" x="3827" y="1967"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="qy9-ZY-wk3">
@@ -425,12 +435,117 @@
             </objects>
             <point key="canvasLocation" x="67.938931297709928" y="2709.8591549295775"/>
         </scene>
+        <!--記録一覧-->
+        <scene sceneID="1cX-Vf-b8F">
+            <objects>
+                <viewController title="記録一覧" id="qjp-Pq-OCG" customClass="LogListCollectionViewController" customModule="FoodLogger" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="htQ-wO-3YB">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ykX-tA-vp6">
+                                <rect key="frame" x="0.0" y="103" width="393" height="666"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="MMX-j5-ZF5">
+                                    <size key="itemSize" width="276" height="193"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="InputedFoodCollectionCell" id="jfl-ck-41n" customClass="LogListCollectionCell" customModule="FoodLogger" customModuleProvider="target">
+                                        <rect key="frame" x="58.666666666666664" y="0.0" width="276" height="193"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="xSu-u0-gSN">
+                                            <rect key="frame" x="0.0" y="0.0" width="276" height="193"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Oq3-bo-kbW">
+                                                    <rect key="frame" x="12.000000000000004" y="98" width="55.333333333333343" height="83"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="トマト" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CSS-8k-WkY">
+                                                            <rect key="frame" x="0.0" y="0.0" width="55.333333333333336" height="21"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="21" id="cem-MD-HMh"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="人参" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iA9-x2-Nj1">
+                                                            <rect key="frame" x="0.0" y="31" width="55.333333333333336" height="21"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="21" id="1n3-ci-xuh"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="豚肉" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rwu-Rc-rrS">
+                                                            <rect key="frame" x="0.0" y="62" width="55.333333333333336" height="21"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="21" id="Xd9-Ws-B8n"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="749" text="2021年1月10日" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GIh-XL-stV">
+                                                    <rect key="frame" x="8" y="12" width="134.33333333333334" height="78"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Oq3-bo-kbW" firstAttribute="leading" secondItem="GIh-XL-stV" secondAttribute="leading" constant="4" id="5A4-pD-iwU"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="GIh-XL-stV" secondAttribute="trailing" constant="8" id="7bo-Rl-o1y"/>
+                                                <constraint firstItem="GIh-XL-stV" firstAttribute="top" secondItem="xSu-u0-gSN" secondAttribute="top" constant="12" id="g2r-1O-Iwz"/>
+                                                <constraint firstItem="GIh-XL-stV" firstAttribute="leading" secondItem="xSu-u0-gSN" secondAttribute="leading" constant="8" id="hnn-3v-6I7"/>
+                                                <constraint firstAttribute="bottom" secondItem="Oq3-bo-kbW" secondAttribute="bottom" constant="12" id="rNQ-GC-w0h"/>
+                                                <constraint firstItem="Oq3-bo-kbW" firstAttribute="top" secondItem="GIh-XL-stV" secondAttribute="bottom" constant="8" id="sdW-bn-Lfl"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <color key="backgroundColor" red="0.95596832482993199" green="0.85090763598163266" blue="0.5" alpha="0.59763038079470188" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <size key="customSize" width="276" height="193"/>
+                                        <connections>
+                                            <outlet property="dateLabel" destination="GIh-XL-stV" id="2QC-Mx-iZc"/>
+                                            <outlet property="firstFood" destination="CSS-8k-WkY" id="spa-5I-CYp"/>
+                                            <outlet property="secondFood" destination="iA9-x2-Nj1" id="qzt-Em-SFT"/>
+                                            <outlet property="thirdFood" destination="Rwu-Rc-rrS" id="hvr-UT-m0v"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="lMI-PD-J8K"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="記録一覧" id="p5k-Eg-5qa">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Wbq-9k-CRG">
+                            <connections>
+                                <segue destination="mS8-lw-njG" kind="show" id="MLg-wX-oFC"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="collectionView" destination="ykX-tA-vp6" id="h2d-ny-PRT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wpg-4b-4HI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="904.58015267175574" y="1966.9014084507044"/>
+        </scene>
     </scenes>
     <resources>
         <image name="IMG_3456" width="3024" height="4032"/>
-        <image name="camera.fill" catalog="system" width="128" height="93"/>
         <image name="checklist" catalog="system" width="128" height="107"/>
         <image name="checkmark.circle" catalog="system" width="128" height="123"/>
+        <image name="return" catalog="system" width="128" height="102"/>
+        <image name="text.book.closed.fill" catalog="system" width="115" height="128"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

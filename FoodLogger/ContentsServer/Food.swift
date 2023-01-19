@@ -27,3 +27,8 @@ struct InputedFood: Food {
     var shouldCheck: Bool = false
     var registeredDate: Date?
 }
+
+struct Meal {
+    let date: Date
+    let foods: [InputedFood]
+}

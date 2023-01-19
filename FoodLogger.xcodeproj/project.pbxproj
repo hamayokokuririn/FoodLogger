@@ -34,6 +34,8 @@
 		B57BD1672973F457006C9D79 /* InputFoodTableViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57BD1662973F457006C9D79 /* InputFoodTableViewModelTests.swift */; };
 		B57BD1692974DB46006C9D79 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57BD1682974DB46006C9D79 /* DateExtension.swift */; };
 		B5A760572976AE8E0007B986 /* ShouldCheckFoodTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A760562976AE8E0007B986 /* ShouldCheckFoodTests.swift */; };
+		B5AF56742978D6E400BF6054 /* LogListCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AF56732978D6E400BF6054 /* LogListCollectionViewController.swift */; };
+		B5AF56762978E15C00BF6054 /* LogListCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AF56752978E15C00BF6054 /* LogListCollectionCell.swift */; };
 		B5C91ACF296E92C600CB7B31 /* ImageAnalysisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C91ACD296E92C600CB7B31 /* ImageAnalysisViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -77,6 +79,8 @@
 		B57BD1662973F457006C9D79 /* InputFoodTableViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputFoodTableViewModelTests.swift; sourceTree = "<group>"; };
 		B57BD1682974DB46006C9D79 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		B5A760562976AE8E0007B986 /* ShouldCheckFoodTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShouldCheckFoodTests.swift; sourceTree = "<group>"; };
+		B5AF56732978D6E400BF6054 /* LogListCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogListCollectionViewController.swift; sourceTree = "<group>"; };
+		B5AF56752978E15C00BF6054 /* LogListCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogListCollectionCell.swift; sourceTree = "<group>"; };
 		B5C91ACD296E92C600CB7B31 /* ImageAnalysisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAnalysisViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -195,6 +199,8 @@
 				B56ECF3D2972ACF1004E57F9 /* ShouldCheckFoodTableViewController.swift */,
 				B57BD15B2973958E006C9D79 /* InputFoodCell.swift */,
 				B52FF3FB2977FA2500391822 /* ShouldCheckFoodCell.swift */,
+				B5AF56732978D6E400BF6054 /* LogListCollectionViewController.swift */,
+				B5AF56752978E15C00BF6054 /* LogListCollectionCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -315,6 +321,8 @@
 				B52FF3FC2977FA2500391822 /* ShouldCheckFoodCell.swift in Sources */,
 				B57BD1652973EDDE006C9D79 /* InputFoodTableViewModel.swift in Sources */,
 				B57BD1632973DBF3006C9D79 /* Environment.swift in Sources */,
+				B5AF56762978E15C00BF6054 /* LogListCollectionCell.swift in Sources */,
+				B5AF56742978D6E400BF6054 /* LogListCollectionViewController.swift in Sources */,
 				B56ECF342972516E004E57F9 /* ContentsService.swift in Sources */,
 				B54B6F5E296D72DE00AC5A0B /* FoodInputViewController.swift in Sources */,
 				B57BD15C2973958E006C9D79 /* InputFoodCell.swift in Sources */,
