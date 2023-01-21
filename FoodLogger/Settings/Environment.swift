@@ -14,9 +14,9 @@ protocol Environment {
     var reader: Reader { get }
 }
 
-struct Staging: Environment {
-    typealias Reader = ReadJSONForSaitamaSyokuhin
-    typealias InputDataStore = InputedFoodDataStore
+struct InMemory: Environment {
+    typealias Reader = JSONReaderForSaitamaSyokuhin
+    typealias InputDataStore = InputedMealDataStore
     
-    let reader = ReadJSONForSaitamaSyokuhin()
+    let reader = JSONReaderForSaitamaSyokuhin()
 }

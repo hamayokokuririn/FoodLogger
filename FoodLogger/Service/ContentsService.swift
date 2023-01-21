@@ -10,7 +10,7 @@ import Foundation
 
 actor ContentsService<Env: Environment> {
     
-    let inputDataStore = InputedFoodDataStore()
+    let inputDataStore = InputedMealDataStore()
     let shouldCheckDataStore: ShouldCheckFoodDataStore<Env.Reader>
     
     init(env: Env) throws {

@@ -12,19 +12,23 @@ final class LogListCollectionViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
-    private let models = [Meal(date: Date(),
-                               foods: [InputedFood(name: "apple")]),
-                          Meal(date: Date(),
-                               foods: [InputedFood(name: "banana")]),
-                          Meal(date: Date(),
-                               foods: [InputedFood(name: "orange")]),
-                          Meal(date: Date(),
-                               foods: [InputedFood(name: "melon")]),
-                          Meal(date: Date(),
-                               foods: [InputedFood(name: "apple")]),
-                          Meal(date: Date(),
-                               foods: [InputedFood(name: "lemon")])
-    ]
+    private let dateFormatter = DateFormatter().custom
+    let dateString = "2023年1月1日"
+    private lazy var models: [Meal] = {
+        [Meal(date: dateFormatter.date(from: dateString)!,
+              foods: [InputedFood(name: "apple")]),
+         Meal(date: dateFormatter.date(from: dateString)!,
+              foods: [InputedFood(name: "banana")]),
+         Meal(date: dateFormatter.date(from: dateString)!,
+              foods: [InputedFood(name: "orange")]),
+         Meal(date: dateFormatter.date(from: dateString)!,
+              foods: [InputedFood(name: "melon")]),
+         Meal(date: dateFormatter.date(from: dateString)!,
+              foods: [InputedFood(name: "apple")]),
+         Meal(date: dateFormatter.date(from: dateString)!,
+              foods: [InputedFood(name: "lemon")])
+        ]
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,18 +40,27 @@ final class LogListCollectionViewController: UIViewController {
         collectionView.collectionViewLayout = layout
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        Task {
+            let list = await UIApplication.shared.contentsService.inputDataStore.getMealList()
+            self.models += list
+        }
+    }
+    
     private func gridSection(collectionViewBounds: CGRect) -> NSCollectionLayoutSection {
         let itemCount = 1 // 横に並べる数
         // １つのitemを生成
         let item = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1),
-            heightDimension: .estimated(100))
+            heightDimension: .estimated(0))
         )
         let group = NSCollectionLayoutGroup
             .horizontal(
                 layoutSize: NSCollectionLayoutSize(
                     widthDimension: .fractionalWidth(1),
-                    heightDimension: .estimated(100)),
+                    heightDimension: .estimated(0)),
                 repeatingSubitem: item, count: itemCount)
         
         let section = NSCollectionLayoutSection(group: group)
