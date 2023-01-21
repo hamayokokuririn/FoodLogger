@@ -16,19 +16,13 @@ final class LogListCollectionViewController: UIViewController {
     let dateString = "2023年1月1日"
     private lazy var models: [Meal] = {
         [Meal(date: dateFormatter.date(from: dateString)!,
-              foods: [InputedFood(name: "apple")]),
+              foods: [InputedFood(name: "りんご")]),
          Meal(date: dateFormatter.date(from: dateString)!,
-              foods: [InputedFood(name: "banana")]),
-         Meal(date: dateFormatter.date(from: dateString)!,
-              foods: [InputedFood(name: "orange")]),
-         Meal(date: dateFormatter.date(from: dateString)!,
-              foods: [InputedFood(name: "melon")]),
-         Meal(date: dateFormatter.date(from: dateString)!,
-              foods: [InputedFood(name: "apple")]),
-         Meal(date: dateFormatter.date(from: dateString)!,
-              foods: [InputedFood(name: "lemon")])
+              foods: [InputedFood(name: "レモン")])
         ]
     }()
+    
+    var showData = [Meal]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +32,8 @@ final class LogListCollectionViewController: UIViewController {
         let section = gridSection(collectionViewBounds: collectionView.frame)
         let layout = UICollectionViewCompositionalLayout(section: section)
         collectionView.collectionViewLayout = layout
+        
+        showData = models.reversed()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -45,7 +41,8 @@ final class LogListCollectionViewController: UIViewController {
         
         Task {
             let list = await UIApplication.shared.contentsService.inputDataStore.getMealList()
-            self.models += list
+            self.showData = (self.models + list).reversed()
+            collectionView.reloadData()
         }
     }
     
@@ -54,13 +51,13 @@ final class LogListCollectionViewController: UIViewController {
         // １つのitemを生成
         let item = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1),
-            heightDimension: .estimated(0))
+            heightDimension: .estimated(100))
         )
         let group = NSCollectionLayoutGroup
             .horizontal(
                 layoutSize: NSCollectionLayoutSize(
                     widthDimension: .fractionalWidth(1),
-                    heightDimension: .estimated(0)),
+                    heightDimension: .estimated(100)),
                 repeatingSubitem: item, count: itemCount)
         
         let section = NSCollectionLayoutSection(group: group)
@@ -71,13 +68,17 @@ final class LogListCollectionViewController: UIViewController {
     
     @IBAction func backToLogList(segue: UIStoryboardSegue) {
         // 戻ってきた時はコレクションビューを更新する
+        self.collectionView.reloadData()
     }
     
 }
 
 extension LogListCollectionViewController: UICollectionViewDataSource {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        1
+    }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return models.count
+        return showData.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -85,8 +86,9 @@ extension LogListCollectionViewController: UICollectionViewDataSource {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "InputedFoodCollectionCell", for: indexPath) as? LogListCollectionCell else {
             return UICollectionViewCell()
         }
+        
         let index = indexPath.row
-        let model = models[index]
+        let model = showData[index]
         cell.setup(first: model.foods.first!.name,
                    date: DateFormatter().custom.string(from: model.date))
         
