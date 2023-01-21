@@ -10,7 +10,7 @@ import Foundation
 import XCTest
 
 final class ReadJSONTests: XCTestCase {
-    let reader = ReadJSONForSaitamaSyokuhin()
+    let reader = JSONReaderForSaitamaSyokuhin()
     
     func testRead() {
         do {

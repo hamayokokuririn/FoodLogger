@@ -44,10 +44,17 @@ class ImageAnalysisViewController: UIViewController {
         guard let nextVC = segue.destination as? InputFoodTableViewController else { return }
         nextVC.wordList = makeWords()
         Task {
-            let input = await UIApplication.shared.contentsService.inputDataStore.getFoodList()
+            let mealList = await UIApplication.shared.contentsService.inputDataStore.getMealList()
+            let inputedList = mealList.map {
+                $0.foods
+            }
+            let array = Array(inputedList.joined())
+            let matchingInputedList = array.map {
+                MatchingInputFood(inputedFood: $0)
+            }
             let shouldCheckList = await UIApplication.shared.contentsService.fetchShouldCheckFoodList()
             nextVC.viewModel = InputFoodTableViewModel(wordList: makeWords(),
-                                                       inputedList: input,
+                                                       inputedList: matchingInputedList,
                                                        shouldCheckList: shouldCheckList)
             
         }

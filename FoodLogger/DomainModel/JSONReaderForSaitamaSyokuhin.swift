@@ -13,7 +13,7 @@ protocol JSONReader {
 }
 
 
-struct ReadJSONForSaitamaSyokuhin: JSONReader {
+struct JSONReaderForSaitamaSyokuhin: JSONReader {
     typealias FileName = File
     
     private let extensionName = "json"

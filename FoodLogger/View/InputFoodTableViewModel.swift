@@ -18,7 +18,7 @@ struct InputFoodTableViewModel {
     var cellShowDataList: [CellShowData]
     
     @MainActor
-    init(wordList: [String], inputedList: [InputedFood], shouldCheckList: [ShouldCheckFood]) {
+    init(wordList: [String], inputedList: [MatchingInputFood], shouldCheckList: [ShouldCheckFood]) {
     
         self.cellShowDataList = wordList.map { word in
             let date = Self.dateForName(word: word, inputedList: inputedList)
@@ -31,20 +31,20 @@ struct InputFoodTableViewModel {
     
     static let emptyDateString = "---"
     
-    static func dateForName(word: String, inputedList: [InputedFood]) -> String {
+    static func dateForName(word: String, inputedList: [MatchingInputFood]) -> String {
         let date: String
         if let first = inputedList.first(where: { food in
-            food.name == word
+            food.hasSameName(with: word)
         }) {
-            date = self.date(input: first)
+            date = self.date(input: first.registeredDate)
         } else {
             date = emptyDateString
         }
         return date
     }
     
-    private static func date(input: InputedFood) -> String {
-        if let date = input.registeredDate {
+    private static func date(input: Date?) -> String {
+        if let date = input {
             return DateFormatter().custom.string(from: date)
         }
         return emptyDateString
@@ -62,7 +62,9 @@ struct InputFoodTableViewModel {
         let inputedList = cellShowDataList.map {
             InputedFood(name: $0.name, registeredDate: Date())
         }
-        await UIApplication.shared.contentsService.inputDataStore.insert(foodList: inputedList)
+        let meal = Meal(date: Date(),
+                        foods: inputedList)
+        await UIApplication.shared.contentsService.inputDataStore.insert(meal: meal)
         
         let list = cellShowDataList.map {
             return ($0.name, $0.shouldCheck)
