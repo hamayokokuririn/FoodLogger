@@ -511,6 +511,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FoodLogger/settings/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "離乳食チェック";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "選択した画像から文字列を読み込むことができます";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -540,6 +541,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FoodLogger/settings/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "離乳食チェック";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "選択した画像から文字列を読み込むことができます";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
