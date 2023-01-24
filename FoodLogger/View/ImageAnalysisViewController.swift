@@ -15,7 +15,9 @@ class ImageAnalysisViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var resultLabel: UILabel!
+    @IBOutlet weak var imageAnalysisIndicator: UIActivityIndicatorView!
     @IBOutlet weak var scrollView: UIScrollView!
+    
     
     @IBAction func didPushImageChange(_ sender: Any) {
         // show image picker
@@ -35,6 +37,8 @@ class ImageAnalysisViewController: UIViewController {
         super.viewDidLoad()
         addDoneButtonToTextView()
         textView.delegate = self
+        
+        imageAnalysisIndicator.isHidden = true
     }
     
     private func photoAuth(picker: PHPickerViewController) {
@@ -151,12 +155,22 @@ class ImageAnalysisViewController: UIViewController {
     
     func analyze() {
         guard let image = imageView.image else { return }
+        imageAnalysisIndicator.isHidden = false
+        imageAnalysisIndicator.startAnimating()
+        
         Task {
+            defer {
+                Task { @MainActor in
+                    imageAnalysisIndicator.isHidden = true
+                    imageAnalysisIndicator.stopAnimating()
+                }
+            }
             do {
                 let config = ImageAnalyzer.Configuration(.text)
                 let analysis = try await analyzer.analyze(image, configuration: config)
                 interaction.analysis = analysis
                 interaction.preferredInteractionTypes = .textSelection
+                interaction.selectableItemsHighlighted = true
             } catch {
                 print(error)
             }

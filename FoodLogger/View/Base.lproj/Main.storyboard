@@ -193,11 +193,19 @@
                                                             <constraint firstAttribute="height" constant="500" id="8fN-Zv-Gfg"/>
                                                         </constraints>
                                                     </imageView>
+                                                    <activityIndicatorView opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="JRB-6b-x4m">
+                                                        <rect key="frame" x="0.0" y="0.0" width="369" height="500"/>
+                                                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                                    </activityIndicatorView>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemGray2Color"/>
                                                 <constraints>
+                                                    <constraint firstItem="JRB-6b-x4m" firstAttribute="leading" secondItem="628-Aa-1r4" secondAttribute="leading" id="92J-SN-cWf"/>
+                                                    <constraint firstAttribute="bottom" secondItem="JRB-6b-x4m" secondAttribute="bottom" id="Ekj-SE-4VX"/>
                                                     <constraint firstAttribute="trailing" secondItem="j23-jb-owA" secondAttribute="trailing" id="LnH-nN-UZI"/>
+                                                    <constraint firstItem="JRB-6b-x4m" firstAttribute="top" secondItem="628-Aa-1r4" secondAttribute="top" id="TJf-LD-L5v"/>
                                                     <constraint firstItem="j23-jb-owA" firstAttribute="top" secondItem="628-Aa-1r4" secondAttribute="top" id="cY4-OZ-NvA"/>
+                                                    <constraint firstAttribute="trailing" secondItem="JRB-6b-x4m" secondAttribute="trailing" id="dIe-bv-suy"/>
                                                     <constraint firstAttribute="bottom" secondItem="j23-jb-owA" secondAttribute="bottom" id="fPy-m4-dge"/>
                                                     <constraint firstItem="j23-jb-owA" firstAttribute="leading" secondItem="628-Aa-1r4" secondAttribute="leading" id="mYc-2H-Ebo"/>
                                                 </constraints>
@@ -277,6 +285,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="imageAnalysisIndicator" destination="JRB-6b-x4m" id="TXa-UX-2Be"/>
                         <outlet property="imageView" destination="j23-jb-owA" id="TPs-bl-mqY"/>
                         <outlet property="resultLabel" destination="Rxg-he-nin" id="n2o-xw-Vrj"/>
                         <outlet property="scrollView" destination="aJ1-Hu-yhl" id="1dI-sZ-ZgA"/>
@@ -584,6 +593,9 @@
         </systemColor>
         <systemColor name="systemGray2Color">
             <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray6Color">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
