@@ -34,7 +34,6 @@ class ImageAnalysisViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         addDoneButtonToTextView()
-        addTextRecognition()
         textView.delegate = self
     }
     
@@ -81,10 +80,6 @@ class ImageAnalysisViewController: UIViewController {
                                                selector: #selector(keyboardWillShow),
                                                name: UIResponder.keyboardWillShowNotification,
                                                object: nil)
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(keyboardWillHide),
-                                               name: UIResponder.keyboardWillHideNotification,
-                                               object: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -123,10 +118,6 @@ class ImageAnalysisViewController: UIViewController {
         if distance >= 0 {
             scrollView.contentOffset.y = distance
         }
-    }
-    
-    @objc private func keyboardWillHide(_ notification: Notification) {
-        // キーボードが閉じる時の処理
     }
     
     private func addTextRecognition() {
@@ -214,6 +205,7 @@ extension ImageAnalysisViewController: PHPickerViewControllerDelegate {
             }
             DispatchQueue.main.async {
                 self.imageView.image = UIImage(data: imageData)
+                self.addTextRecognition()
             }
         }
         
