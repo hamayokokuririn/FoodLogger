@@ -26,8 +26,10 @@ final class ShouldCheckFoodCell: UITableViewCell {
     func didChangeCheck(checked: Bool) {
         if checked {
             checkmarkImage.image = UIImage(systemName: "checkmark.circle.fill")
+            checkmarkImage.alpha = 1
         } else {
             checkmarkImage.image = UIImage(systemName: "checkmark.circle")
+            checkmarkImage.alpha = 0.1
         }
     }
 }
