@@ -10,7 +10,7 @@
 		B52FF3FC2977FA2500391822 /* ShouldCheckFoodCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52FF3FB2977FA2500391822 /* ShouldCheckFoodCell.swift */; };
 		B54B6F5A296D72DE00AC5A0B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54B6F59296D72DE00AC5A0B /* AppDelegate.swift */; };
 		B54B6F5C296D72DE00AC5A0B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54B6F5B296D72DE00AC5A0B /* SceneDelegate.swift */; };
-		B54B6F5E296D72DE00AC5A0B /* FoodInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54B6F5D296D72DE00AC5A0B /* FoodInputViewController.swift */; };
+		B54B6F5E296D72DE00AC5A0B /* FoodTextDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54B6F5D296D72DE00AC5A0B /* FoodTextDetector.swift */; };
 		B54B6F61296D72DE00AC5A0B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B54B6F5F296D72DE00AC5A0B /* Main.storyboard */; };
 		B54B6F63296D72E000AC5A0B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B54B6F62296D72E000AC5A0B /* Assets.xcassets */; };
 		B54B6F66296D72E000AC5A0B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B54B6F64296D72E000AC5A0B /* LaunchScreen.storyboard */; };
@@ -56,7 +56,7 @@
 		B54B6F56296D72DE00AC5A0B /* FoodLogger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodLogger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B54B6F59296D72DE00AC5A0B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B54B6F5B296D72DE00AC5A0B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B54B6F5D296D72DE00AC5A0B /* FoodInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodInputViewController.swift; sourceTree = "<group>"; };
+		B54B6F5D296D72DE00AC5A0B /* FoodTextDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodTextDetector.swift; sourceTree = "<group>"; };
 		B54B6F60296D72DE00AC5A0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B54B6F62296D72E000AC5A0B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B54B6F65296D72E000AC5A0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -186,6 +186,7 @@
 		B56ECF402972AE0F004E57F9 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				B54B6F5D296D72DE00AC5A0B /* FoodTextDetector.swift */,
 				B56ECF332972516E004E57F9 /* ContentsService.swift */,
 				B56ECF172970E872004E57F9 /* KeyboardExtension.swift */,
 				B56ECF262970F184004E57F9 /* LinguisticService.swift */,
@@ -198,7 +199,6 @@
 			isa = PBXGroup;
 			children = (
 				B54B6F5F296D72DE00AC5A0B /* Main.storyboard */,
-				B54B6F5D296D72DE00AC5A0B /* FoodInputViewController.swift */,
 				B56ECF2A297102BE004E57F9 /* InputFoodTableViewController.swift */,
 				B57BD1642973EDDE006C9D79 /* InputFoodTableViewModel.swift */,
 				B5C91ACD296E92C600CB7B31 /* ImageAnalysisViewController.swift */,
@@ -330,7 +330,7 @@
 				B5AF56762978E15C00BF6054 /* LogListCollectionCell.swift in Sources */,
 				B5AF56742978D6E400BF6054 /* LogListCollectionViewController.swift in Sources */,
 				B56ECF342972516E004E57F9 /* ContentsService.swift in Sources */,
-				B54B6F5E296D72DE00AC5A0B /* FoodInputViewController.swift in Sources */,
+				B54B6F5E296D72DE00AC5A0B /* FoodTextDetector.swift in Sources */,
 				B57BD15C2973958E006C9D79 /* InputFoodCell.swift in Sources */,
 				B56ECF3E2972ACF1004E57F9 /* ShouldCheckFoodTableViewController.swift in Sources */,
 				B54B6F5A296D72DE00AC5A0B /* AppDelegate.swift in Sources */,
