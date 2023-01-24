@@ -213,8 +213,8 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="8yZ-Gg-w88">
                                                 <rect key="frame" x="0.0" y="570.33333333333337" width="369" height="116.66666666666663"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ここに読み取り結果を表示" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rxg-he-nin" userLabel="Result Label">
-                                                        <rect key="frame" x="0.0" y="0.0" width="147.33333333333334" height="14.333333333333334"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="読み取り結果をペースト" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rxg-he-nin" userLabel="Result Label">
+                                                        <rect key="frame" x="0.0" y="0.0" width="135" height="14.333333333333334"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                         <color key="textColor" systemColor="secondaryLabelColor"/>
                                                         <nil key="highlightedColor"/>
@@ -251,7 +251,7 @@
                                     <constraint firstItem="PQd-YC-Yur" firstAttribute="trailing" secondItem="mPF-iC-Mxa" secondAttribute="trailing" constant="12" id="1dp-sV-ocf"/>
                                     <constraint firstItem="PQd-YC-Yur" firstAttribute="width" secondItem="o4w-Sg-b8i" secondAttribute="width" constant="-24" id="88Q-qL-NgX"/>
                                     <constraint firstItem="PQd-YC-Yur" firstAttribute="leading" secondItem="mPF-iC-Mxa" secondAttribute="leading" constant="12" id="GM0-Gl-jqz"/>
-                                    <constraint firstItem="PQd-YC-Yur" firstAttribute="bottom" secondItem="mPF-iC-Mxa" secondAttribute="bottom" id="Ihz-pQ-ZbK"/>
+                                    <constraint firstItem="PQd-YC-Yur" firstAttribute="bottom" secondItem="mPF-iC-Mxa" secondAttribute="bottom" constant="-12" id="Ihz-pQ-ZbK"/>
                                     <constraint firstItem="PQd-YC-Yur" firstAttribute="top" secondItem="mPF-iC-Mxa" secondAttribute="top" id="K1n-06-W6S"/>
                                 </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="mPF-iC-Mxa"/>

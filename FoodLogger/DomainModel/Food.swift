@@ -53,4 +53,12 @@ struct MatchingInputFood: MatchingFood {
 struct Meal {
     let date: Date
     let foods: [InputedFood]
+    
+    init?(date: Date, foods: [InputedFood]) {
+        if foods.isEmpty {
+            return nil
+        }
+        self.date = date
+        self.foods = foods
+    }
 }

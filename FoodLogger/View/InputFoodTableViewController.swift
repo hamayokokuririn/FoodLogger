@@ -16,6 +16,17 @@ class InputFoodTableViewController: UITableViewController {
         }
     }
     
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        let result = viewModel?.onShouldPerformSegue() ?? false
+        if result == false {
+            let alert = UIAlertController()
+            alert.title = "入力された食品がありません"
+            alert.addAction(UIAlertAction(title: "OK", style: .default))
+            self.present(alert, animated: true, completion: nil)
+        }
+        return result
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // 保存処理
         Task {

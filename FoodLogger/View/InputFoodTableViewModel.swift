@@ -58,12 +58,19 @@ struct InputFoodTableViewModel {
         }
     }
     
+    func onShouldPerformSegue() -> Bool {
+        let inputedList = cellShowDataList.map {
+            InputedFood(name: $0.name, registeredDate: Date())
+        }
+        return !inputedList.isEmpty
+    }
+    
     func onPrepare() async {
         let inputedList = cellShowDataList.map {
             InputedFood(name: $0.name, registeredDate: Date())
         }
         let meal = Meal(date: Date(),
-                        foods: inputedList)
+                        foods: inputedList)!
         await UIApplication.shared.contentsService.inputDataStore.insert(meal: meal)
         
         let list = cellShowDataList.map {

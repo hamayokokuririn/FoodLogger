@@ -16,9 +16,9 @@ final class LogListCollectionViewController: UIViewController {
     let dateString = "2023年1月1日 12:10"
     private lazy var models: [Meal] = {
         [Meal(date: dateFormatter.date(from: dateString)!,
-              foods: [InputedFood(name: "りんご")]),
+              foods: [InputedFood(name: "りんご")])!,
          Meal(date: dateFormatter.date(from: dateString)!,
-              foods: [InputedFood(name: "レモン")])
+              foods: [InputedFood(name: "レモン")])!
         ]
     }()
     
