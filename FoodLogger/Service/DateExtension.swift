@@ -8,11 +8,20 @@
 import Foundation
 
 extension DateFormatter {
-    var custom: DateFormatter {
+    var customDate: DateFormatter {
         calendar = Calendar(identifier: .gregorian)
         locale = Locale(identifier: "ja_JP")
         timeZone = TimeZone(identifier: "Asia/Tokyo")
         dateStyle = .long
+        return self
+    }
+    
+    var customDateAndTime: DateFormatter {
+        calendar = Calendar(identifier: .gregorian)
+        locale = Locale(identifier: "ja_JP")
+        timeZone = TimeZone(identifier: "Asia/Tokyo")
+        dateStyle = .long
+        timeStyle = .short
         return self
     }
 }

@@ -12,8 +12,8 @@ final class LogListCollectionViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
-    private let dateFormatter = DateFormatter().custom
-    let dateString = "2023年1月1日"
+    private let dateFormatter = DateFormatter().customDateAndTime
+    let dateString = "2023年1月1日 12:10"
     private lazy var models: [Meal] = {
         [Meal(date: dateFormatter.date(from: dateString)!,
               foods: [InputedFood(name: "りんご")]),
@@ -90,7 +90,7 @@ extension LogListCollectionViewController: UICollectionViewDataSource {
         let index = indexPath.row
         let model = showData[index]
         cell.setup(first: model.foods.first!.name,
-                   date: DateFormatter().custom.string(from: model.date))
+                   date: DateFormatter().customDateAndTime.string(from: model.date))
         
         return cell
     }

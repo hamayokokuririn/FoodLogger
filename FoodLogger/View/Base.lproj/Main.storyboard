@@ -454,17 +454,17 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="InputedFoodCollectionCell" id="jfl-ck-41n" customClass="LogListCollectionCell" customModule="FoodLogger" customModuleProvider="target">
-                                        <rect key="frame" x="58.666666666666664" y="0.0" width="276" height="193"/>
+                                        <rect key="frame" x="58.666666666666664" y="0.0" width="276" height="140"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="xSu-u0-gSN">
-                                            <rect key="frame" x="0.0" y="0.0" width="276" height="193"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="276" height="140"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Oq3-bo-kbW">
-                                                    <rect key="frame" x="12.000000000000004" y="98" width="55.333333333333343" height="83"/>
+                                                    <rect key="frame" x="12" y="45" width="256" height="83"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="トマト" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CSS-8k-WkY">
-                                                            <rect key="frame" x="0.0" y="0.0" width="55.333333333333336" height="21"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="256" height="21"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="21" id="cem-MD-HMh"/>
                                                             </constraints>
@@ -473,7 +473,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="人参" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iA9-x2-Nj1">
-                                                            <rect key="frame" x="0.0" y="31" width="55.333333333333336" height="21"/>
+                                                            <rect key="frame" x="0.0" y="31" width="256" height="21"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="21" id="1n3-ci-xuh"/>
                                                             </constraints>
@@ -482,7 +482,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="豚肉" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rwu-Rc-rrS">
-                                                            <rect key="frame" x="0.0" y="62" width="55.333333333333336" height="21"/>
+                                                            <rect key="frame" x="0.0" y="62" width="256" height="21"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="21" id="Xd9-Ws-B8n"/>
                                                             </constraints>
@@ -492,8 +492,8 @@
                                                         </label>
                                                     </subviews>
                                                 </stackView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="749" text="2021年1月10日" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GIh-XL-stV">
-                                                    <rect key="frame" x="8" y="12" width="134.33333333333334" height="78"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="749" text="2021年1月10日 12:58" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GIh-XL-stV">
+                                                    <rect key="frame" x="8" y="12" width="188.66666666666666" height="25"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -506,10 +506,11 @@
                                                 <constraint firstItem="GIh-XL-stV" firstAttribute="leading" secondItem="xSu-u0-gSN" secondAttribute="leading" constant="8" id="hnn-3v-6I7"/>
                                                 <constraint firstAttribute="bottom" secondItem="Oq3-bo-kbW" secondAttribute="bottom" constant="12" id="rNQ-GC-w0h"/>
                                                 <constraint firstItem="Oq3-bo-kbW" firstAttribute="top" secondItem="GIh-XL-stV" secondAttribute="bottom" constant="8" id="sdW-bn-Lfl"/>
+                                                <constraint firstAttribute="trailing" secondItem="Oq3-bo-kbW" secondAttribute="trailing" constant="8" id="uaj-8a-ymt"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <color key="backgroundColor" red="0.95596832482993199" green="0.85090763598163266" blue="0.5" alpha="0.59763038079470188" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <size key="customSize" width="276" height="193"/>
+                                        <size key="customSize" width="276" height="140"/>
                                         <connections>
                                             <outlet property="dateLabel" destination="GIh-XL-stV" id="2QC-Mx-iZc"/>
                                             <outlet property="firstFood" destination="CSS-8k-WkY" id="spa-5I-CYp"/>

@@ -12,8 +12,8 @@ import XCTest
 final class InputFoodTableViewModelTests: XCTestCase {
     let wordList = ["a", "b", "c"]
     let dateString = "2023年1月1日"
-    lazy var inputedList: [InputedFood] = {
-        return [InputedFood(name: "a", registeredDate: testDate)]
+    lazy var inputedList: [MatchingInputFood] = {
+        return [MatchingInputFood(inputedFood: InputedFood(name: "a", registeredDate: testDate))]
     }()
     
     lazy var shouldCheckList: [ShouldCheckFood] = {
@@ -52,7 +52,7 @@ final class InputFoodTableViewModelTests: XCTestCase {
     }
     
     lazy var testDate: Date = {
-        let df = DateFormatter().custom
+        let df = DateFormatter().customDate
         
         return df.date(from: dateString)!
     }()

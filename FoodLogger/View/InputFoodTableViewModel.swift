@@ -45,7 +45,7 @@ struct InputFoodTableViewModel {
     
     private static func date(input: Date?) -> String {
         if let date = input {
-            return DateFormatter().custom.string(from: date)
+            return DateFormatter().customDate.string(from: date)
         }
         return emptyDateString
     }
